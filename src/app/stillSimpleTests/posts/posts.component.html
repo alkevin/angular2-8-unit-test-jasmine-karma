@@ -1,0 +1,13 @@
+<div class="mainContainer">
+  <header>
+    <h3>Wall Posts</h3>
+  </header>
+  <app-addpost (addPost)="addPost($event)"></app-addpost>
+  <div class="wall">
+    <app-post
+      *ngFor="let post of posts"
+      (deleteMe)="delete($event)"
+      [post]="post"
+    ></app-post>
+  </div>
+</div>

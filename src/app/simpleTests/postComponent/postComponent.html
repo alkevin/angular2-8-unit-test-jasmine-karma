@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <mat-card-subtitle>postby: {{ post.userId }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ post.body }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-icon-button
+      [ngClass]="{ liked: post.myLike }"
+      (click)="post.myLike ? dislike() : like()"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <p class="totalLikes">{{ post.totalLikes }}</p>
+    <button
+      class="delete"
+      (click)="deleteMe.emit(post.id)"
+      mat-button
+      color="warn"
+    >
+      Delete
+    </button>
+  </mat-card-actions>
+</mat-card>

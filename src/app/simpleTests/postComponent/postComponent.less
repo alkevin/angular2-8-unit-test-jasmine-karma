@@ -1,0 +1,21 @@
+mat-card {
+  height: 150px;
+  display: flex-row;
+  margin: 20px 0;
+  padding: 20px;
+
+  mat-card-actions {
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    .delete {
+      position: absolute;
+      right: 0;
+      margin: auto;
+    }
+  }
+  .liked {
+    color: red;
+  }
+}
